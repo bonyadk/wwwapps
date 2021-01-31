@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Accordion</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css", rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+</head>
+
+<style>
+  .active, .accordion:hover {
+  background-color: #ccc; 
+}
+</style>
+
+<body>
+
+  <nav aria-label="breadcrumb">
+    <ol id = "indexbc", class="breadcrumb">
+      <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+      <li class="breadcrumb-item"><a href="Carousel.html">Carousel</a></li>
+      <li class="breadcrumb-item" aria-current="page">Accordion</li>
+      <li class="breadcrumb-item"><a href="Form.html">Form</a></li>
+      <li class="breadcrumb-item"><a href="Modal.html">Modal</a></li>
+    </ol>
+  </nav>
+
+  <h2>Accordion</h2>
+
+  <button class="accordion">First item</button>
+  <div class="panel">
+    <p>This is my first section</p>
+  </div>
+  
+  <button class="accordion">Second item</button>
+  <div class="panel">
+    <p>This is my second section</p>
+  </div>
+  
+  <button class="accordion">Third Item</button>
+  <div class="panel">
+    <p>This is my third section</p>
+  </div>
+  
+  <script>
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+  
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
+    });
+  }
+  </script>
+</body>
+
+</html>
